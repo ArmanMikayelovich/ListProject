@@ -1,35 +1,32 @@
 package am.aca.list.dao;
 
+import am.aca.list.entityes.ImageEntity;
+import am.aca.list.entityes.ProductEntity;
 import am.aca.list.entityes.UserEntity;
+import am.aca.list.util.HibernateSessionFactory;
+import org.hibernate.Session;
 
 import java.util.List;
 
 //DATA ACCESS OBJECT == DAO
 public class ImageDAO {
-    public void registerUser(String firstName,String lastName,
-                             String password,String email,String phone) {
-//        TODO
+    public static void addImage(ProductEntity product, String imgSource) {
+
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        ImageEntity image = new ImageEntity();
+        image.setImgSource(imgSource);
+        image.setProduct(product);
+        session.save(image);
+        product.getImgList().add(image);
+        session.update(product);
+        session.flush();
+        session.close();
     }
 
-    public void updateUser(UserEntity user) {
-//        TODO
+    public static void deleteImage(ImageEntity image) {
+
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        session.delete(image);
     }
-
-    public void delete(UserEntity user) {
-//        TODO
-    }
-
-
-    public List<ProductDAO> getProducts() {
-//        TODO
-        return null;
-    }
-
-
-
-
-
-
-
 
 }

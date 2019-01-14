@@ -3,8 +3,8 @@
 
         <property name="connection.url">jdbc:mariadb://localhost:3306/list</property>
         <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password">root</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">9999</property>
 
         <property name="dialect">org.hibernate.dialect.MariaDB53Dialect</property>
 
