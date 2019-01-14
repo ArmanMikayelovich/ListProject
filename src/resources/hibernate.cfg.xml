@@ -1,0 +1,21 @@
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.url">jdbc:mariadb://localhost:3306/list</property>
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">root</property>
+
+        <property name="dialect">org.hibernate.dialect.MariaDB53Dialect</property>
+
+        <property name="hbm2ddl.auto">validate</property>
+
+        <property name="show_sql">true</property>
+
+        <mapping class="am.aca.list.entityes.UserEntity" />
+        <mapping class="am.aca.list.entityes.ProductEntity" />
+        <mapping class="am.aca.list.entityes.CategoryEntity" />
+        <mapping class="am.aca.list.entityes.ImageEntity" />
+
+    </session-factory>
+</hibernate-configuration>
