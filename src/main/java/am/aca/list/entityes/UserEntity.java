@@ -11,8 +11,7 @@ public class UserEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "user_id_seq")
-    @SequenceGenerator(name = "user_id_seq",catalog = "user_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private int user_id;
 
@@ -31,7 +30,7 @@ public class UserEntity {
     @Column(name = "phone", nullable = false)
     private String phone;
 
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "userEntity",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
     private List<ProductEntity> productList;
 
 

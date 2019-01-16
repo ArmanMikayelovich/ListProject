@@ -13,8 +13,7 @@ public class ImageEntity {
 
     @Id
     @Column(name = "img_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "img_id_seq")
-    @SequenceGenerator(name = "img_id_seq",catalog = "img_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int imageId;
 
     public int getImageId() {
@@ -26,19 +25,36 @@ public class ImageEntity {
     }
 
     @Column(name = "product_id")
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private ProductEntity product;
+    private int product_id;
+
+    public int getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
+    }
+
+    public ProductEntity getProductEntity() {
+        return productEntity;
+    }
+
+    public void setProductEntity(ProductEntity productEntity) {
+        this.productEntity = productEntity;
+    }
+
+    @ManyToOne
+    private ProductEntity productEntity;
 
     @Column(name = "img_source")
     private String imgSource;
 
     public ProductEntity getProduct() {
-        return product;
+        return productEntity;
     }
 
     public void setProduct(ProductEntity product) {
-        this.product = product;
+        this.productEntity = product;
     }
 
     public String getImgSource() {
@@ -48,4 +64,5 @@ public class ImageEntity {
     public void setImgSource(String imgSource) {
         this.imgSource = imgSource;
     }
+
 }

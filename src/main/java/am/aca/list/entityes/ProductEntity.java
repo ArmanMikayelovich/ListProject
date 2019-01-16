@@ -9,24 +9,22 @@ import java.util.List;
 public class ProductEntity {
     @Id
     @Column(name = "product_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "product")
-    @SequenceGenerator(name = "product_id_seq",catalog = "product_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int productId;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private CategoryEntity category;
+    private CategoryEntity categoryEntity;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
+    @ManyToOne
+    private UserEntity userEntity;
 
     public UserEntity getUser() {
-        return user;
+        return userEntity;
     }
 
     public void setUser(UserEntity user) {
-        this.user = user;
+        this.userEntity = user;
     }
 
     @Column(name = "description")
@@ -35,7 +33,7 @@ public class ProductEntity {
     @Column(name = "price")
     private int price;
 
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "productEntity",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
     private List<ImageEntity> imgList;
 
     @Column(name = "create_date")
@@ -54,11 +52,11 @@ public class ProductEntity {
     }
 
     public CategoryEntity getCategory() {
-        return category;
+        return categoryEntity;
     }
 
     public void setCategory(CategoryEntity category) {
-        this.category = category;
+        this.categoryEntity = category;
     }
 
     public String getDescription() {

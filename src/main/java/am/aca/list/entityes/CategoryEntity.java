@@ -8,11 +8,8 @@ public class CategoryEntity {
 
     @Id
     @Column(name = "category_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "category_id_seq")
-    @SequenceGenerator(name = "category_id_seq",catalog = "category_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int caregoryId;
-    @OneToMany
-    @JoinColumn()
     @Column(name = "category_name",unique = true)
     private String categoryName;
 
