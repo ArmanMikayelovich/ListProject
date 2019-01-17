@@ -28,23 +28,31 @@ public class UserDAO {
 
     public static void saveUser(UserEntity user) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        session.beginTransaction();
         session.save(user);
         session.flush();
+        session.getTransaction().commit();
         session.close();
     }
 
     public static void updateUser(UserEntity user) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        session.beginTransaction();
+
         session.update(user);
         session.flush();
+        session.getTransaction().commit();
         session.close();
 
     }
 
     public static void deleteUser(UserEntity user) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        session.beginTransaction();
         session.delete(user);
         session.flush();
+        session.getTransaction().commit();
+
         session.close();
 
     }

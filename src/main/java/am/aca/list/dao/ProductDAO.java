@@ -28,7 +28,7 @@ public class ProductDAO {
         session.save(product);
         user.getProductList().add(product);
         session.save(user);
-        session.flush();
+//        session.flush();
         session.close();
         return product;
 

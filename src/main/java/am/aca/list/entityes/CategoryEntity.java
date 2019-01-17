@@ -31,5 +31,11 @@ public class CategoryEntity {
         this.categoryName = categoryName;
     }
 
-
+    @Override
+    public String toString() {
+        return "\nCategoryEntity{" +
+                "caregoryId=" + caregoryId +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
 }

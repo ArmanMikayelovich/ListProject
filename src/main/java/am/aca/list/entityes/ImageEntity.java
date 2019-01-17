@@ -24,16 +24,9 @@ public class ImageEntity {
         this.imageId = imageId;
     }
 
-    @Column(name = "product_id")
-    private int product_id;
 
-    public int getProduct_id() {
-        return product_id;
-    }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
-    }
+
 
     public ProductEntity getProductEntity() {
         return productEntity;
@@ -65,4 +58,12 @@ public class ImageEntity {
         this.imgSource = imgSource;
     }
 
+    @Override
+    public String toString() {
+        return "\nImageEntity{" +
+                "imageId=" + imageId +
+                ", productEntity=" + productEntity.getProductId() +
+                ", imgSource='" + imgSource + '\'' +
+                '}';
+    }
 }

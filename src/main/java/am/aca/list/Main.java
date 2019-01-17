@@ -28,6 +28,7 @@ public class Main
                 "Nissan Almera 2000Year 2000$$$","1,8 mator, 1.1 balon, 400.000 drived",1_000_000);
         ImageDAO.addImage(nissanAlmera,"http://www.google.com/nissan.jpg");
         System.out.println("ALL IS OK!!!!");
+        System.out.println(UserDAO.getProducts(Mikayelovich));
 
     }
 }

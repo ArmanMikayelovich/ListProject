@@ -19,7 +19,7 @@ public class ImageDAO {
         session.save(image);
         product.getImgList().add(image);
         session.update(product);
-        session.flush();
+//        session.flush();
         session.close();
     }
 

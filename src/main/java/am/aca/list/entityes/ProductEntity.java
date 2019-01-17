@@ -99,4 +99,17 @@ public class ProductEntity {
         this.title = title;
     }
 
+    @Override
+    public String toString() {
+        return "\nProductEntity{" +
+                "productId=" + productId +
+                ", categoryEntity=" + categoryEntity +
+                ", userEntity=" + userEntity +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", imgList=" + imgList +
+                ", create_date=" + create_date +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

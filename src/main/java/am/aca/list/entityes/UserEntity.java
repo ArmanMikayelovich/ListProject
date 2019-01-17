@@ -90,6 +90,15 @@ public class UserEntity {
         this.productList = productList;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "user_id=" + user_id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+//                ", productList=" + productList +
+                '}';
+    }
 }
