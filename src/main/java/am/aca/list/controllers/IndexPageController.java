@@ -23,10 +23,11 @@ public class IndexPageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "user/{userId}", method = RequestMethod.GET)
+    @RequestMapping(value = "users/{userId}", method = RequestMethod.GET)
     public ModelAndView getProductList(@PathVariable("userId") int id) {
         ModelAndView modelAndView = new ModelAndView("product");
         modelAndView.addObject("allUsers", UserDAO.getUserIdName());
+        modelAndView.addObject("userName",UserDAO.getUserById(id));
         UserEntity user = UserDAO.getUserById(id);
         modelAndView.addObject("products",UserDAO.getProductsView(user));
 

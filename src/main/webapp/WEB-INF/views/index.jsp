@@ -9,15 +9,15 @@
     <style>
         .users {
             background-color: #c6cec5;
-            width: 30%;
+            width: 20%;
             height: 100%;
             float: left;
         }
         .productsOfUser {
             background-color: #cdccc9;
-            width: 70%;
+            width: 80%;
             height: 100%;
-            float: left;
+            float: right;
         }
     </style>
 </head>
