@@ -20,11 +20,11 @@ public class Main
     public static void main( String[] args )
     {
 
-     UserEntity Mikayelovich =   UserDAO.addUser("Arman","Arshakyan",
+     UserEntity Mikayelovich =   UserDAO.addUser("Ani","Galajyan",
                     "Parol999","ArmanMikayelovich@gmail.com","+37444676676");
-      CategoryEntity cars = CategoryDAO.addCategory("Cars");
+        CategoryEntity cars = CategoryDAO.addCategory("Cars");
 
-       ProductEntity nissanAlmera =  ProductDAO.addProduct(Mikayelovich,cars,new ArrayList<ImageEntity>(),
+        ProductEntity nissanAlmera =  ProductDAO.addProduct(Mikayelovich,cars,new ArrayList<ImageEntity>(),
                 "Nissan Almera 2000Year 2000$$$","1,8 mator, 1.1 balon, 400.000 drived",1_000_000);
         ImageDAO.addImage(nissanAlmera,"http://www.google.com/nissan.jpg");
         System.out.println("ALL IS OK!!!!");

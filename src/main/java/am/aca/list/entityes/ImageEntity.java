@@ -27,7 +27,6 @@ public class ImageEntity {
 
 
 
-
     public ProductEntity getProductEntity() {
         return productEntity;
     }

@@ -17,7 +17,7 @@
             background-color: #cdccc9;
             width: 80%;
             height: 100%;
-            float: right;
+            float: right    ;
         }
     </style>
 </head>

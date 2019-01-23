@@ -16,6 +16,7 @@
         <mapping class="am.aca.list.entityes.ProductEntity" />
         <mapping class="am.aca.list.entityes.CategoryEntity" />
         <mapping class="am.aca.list.entityes.ImageEntity" />
+        <mapping class="am.aca.list.entityes.CategoryGroupEntity"/>
 
     </session-factory>
 </hibernate-configuration>

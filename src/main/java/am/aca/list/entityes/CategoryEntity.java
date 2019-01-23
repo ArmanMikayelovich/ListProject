@@ -1,10 +1,16 @@
 package am.aca.list.entityes;
 
+import org.hibernate.annotations.ManyToAny;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Categoryes")
 public class CategoryEntity {
+
+    public CategoryEntity() {
+
+    }
 
     @Id
     @Column(name = "category_id")
@@ -12,6 +18,11 @@ public class CategoryEntity {
     private int caregoryId;
     @Column(name = "category_name",unique = true)
     private String categoryName;
+
+    @ManyToOne
+    private CategoryGroupEntity categoryGroupEntity;
+
+
 
 
 
